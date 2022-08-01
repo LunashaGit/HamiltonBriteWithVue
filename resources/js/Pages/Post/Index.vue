@@ -46,10 +46,18 @@ export default {
                             </thead>
                             <tbody>
                             <tr v-for="post in posts.data" :key="post.id">
-                                <td class="px-4 py-2">{{ post.id }}</td>
-                                <td class="px-4 py-2">{{ post.title }}</td>
-                                <td class="px-4 py-2">{{ post.body }}</td>
-                                <td class="px-4 py-2"><Link :href="post.slug">Look More</Link></td>
+                                <td class="px-4 py-2">
+                                    {{ post.id }}
+                                </td>
+                                <td class="px-4 py-2">
+                                    {{ post.title }}
+                                </td>
+                                <td class="px-4 py-2">
+                                    {{ post.body }}
+                                </td>
+                                <td class="px-4 py-2">
+                                    <Link :href="route('post.index', { slug: post.slug})">Look More</Link>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
