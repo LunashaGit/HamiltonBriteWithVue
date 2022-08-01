@@ -16,10 +16,10 @@ class Post extends Model
         return $this->hasMany(CommentaryPost::class);
     }
 
-    public function participation()
+    /*public function participation()
     {
         return $this->hasMany(ParticipationPost::class);
-    }
+    }*/
 
     public function category()
     {

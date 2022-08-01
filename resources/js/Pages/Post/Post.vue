@@ -1,21 +1,4 @@
-<script>
-import BreezeAuthenticatedLayout from "@/Layouts/Authenticated.vue";
-import { Head } from "@inertiajs/inertia-vue3";
-import Pagination from "@/Components/Pagination.vue";
-import { Link } from '@inertiajs/inertia-vue3';
-export default {
-    components: {
-        Head,
-        Pagination,
-        Link,
-        BreezeAuthenticatedLayout,
-    },
-    props: {
-        post: Object,
-        comments: Object,
-    },
-};
-</script>
+
 
 <template>
     <Head :title="post.title" />
@@ -54,9 +37,9 @@ export default {
                                 <tbody>
                                 <tr v-for="comment in comments.data" :key="comment.id">
                                     <td class="px-4 py-2">{{ comment.id }}</td>
-                                    <td class="px-4 py-2">{{ comment.user_id }}</td>
+                                    <td class="px-4 py-2">{{ comment.user_id }}
+                                    </td>
                                     <td class="px-4 py-2">{{ comment.comment }}</td>
-
                                 </tr>
                                 </tbody>
                             </table>
@@ -68,3 +51,46 @@ export default {
     </BreezeAuthenticatedLayout>
 </template>
 
+<script>
+import BreezeAuthenticatedLayout from "@/Layouts/Authenticated.vue";
+import { Head } from "@inertiajs/inertia-vue3";
+import Pagination from "@/Components/Pagination.vue";
+import { Link } from '@inertiajs/inertia-vue3';
+export default {
+    /*data(){
+        return{
+            title: '1'
+        }
+    },
+    mounted() {
+        console.log('Component mounted.')
+    },
+    methods:{
+        getData(){
+            axios.get('/api/user/' + {title:this.title} )
+                .then(res => {
+                    console.log(res)
+                }).catch(err => {
+                console.log(err)
+            })
+        }
+    },*/
+    components: {
+        Head,
+        Pagination,
+        Link,
+        BreezeAuthenticatedLayout,
+    },
+    props: {
+        post: Object,
+        comments: Object,
+    },
+};
+
+const x = axios.get('/api/user/' + 26 )
+    .then(res => {
+        console.log(res)
+    }).catch(err => {
+    console.log(err)
+})
+</script>
