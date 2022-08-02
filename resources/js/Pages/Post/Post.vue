@@ -77,7 +77,9 @@ export default {
                                 </thead>
                                 <tbody>
                                 <tr v-for="comment in comments.data" :key="comment.id">
-                                    <td v-for="user in users.data" :key="user.id" class="px-4 py-2"><p v-if="comment.user_id === user.id"> {{ user.username }} </p> </td>
+                                    <div v-for="user in users.data" :key="user.id">
+                                        <td v-if="comment.user_id === user.id"> {{ user.username }} </td>
+                                    </div>
                                     <td class="px-4 py-2">{{ comment.comment }}</td>
                                 </tr>
                                 </tbody>
