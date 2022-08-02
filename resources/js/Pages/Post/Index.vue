@@ -55,7 +55,7 @@ export default {
                                     {{ post.body }}
                                 </td>
                                 <td class="px-4 py-2">
-                                    <Link :href="route('post.index', { slug: post.slug})">Look More</Link>
+                                    <Link :href="route('post.index', { slug: post.slug})">Show More</Link>
                                 </td>
                             </tr>
                             </tbody>
