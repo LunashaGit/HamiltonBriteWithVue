@@ -15,6 +15,7 @@ class UserController extends Controller
             'users' => User::latest()->paginate(5),
         ]);
     }
+
     public function show($username)
     {
         return Inertia::render('User/User', [
@@ -22,10 +23,4 @@ class UserController extends Controller
         ]);
     }
 
-    public function showAPI($id)
-    {
-        $user = User::find($id);
-
-        return response()->json($user);
-    }
 }
