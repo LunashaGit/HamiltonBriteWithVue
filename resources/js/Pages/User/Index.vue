@@ -60,7 +60,7 @@ export default {
                             </tr>
                             </tbody>
                         </table>
-                        <pagination class="mt-6" :links="users.links" />
+                        <pagination class="mt-6 flex justify-center" :links="users.links" />
                     </div>
                 </div>
             </div>
