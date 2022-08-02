@@ -10,7 +10,7 @@ export default {
         BreezeAuthenticatedLayout,
     },
     props: {
-        posts: Object,
+        users: Object,
     },
 };
 </script>
@@ -21,7 +21,7 @@ export default {
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="text-xl font-semibold leading-tight text-gray-800">
-                Posts
+                Users
             </h2>
         </template>
 
@@ -38,29 +38,29 @@ export default {
                     <div class="p-6 bg-white border-b border-gray-200">
                         <table class="w-full">
                             <thead class="font-bold bg-gray-300 border-b-2">
-                            <td class="px-4 py-2">ID</td>
-                            <td class="px-4 py-2">Title</td>
-                            <td class="px-4 py-2">Description</td>
+                            <td class="px-4 py-2">Username</td>
+                            <td class="px-4 py-2">Firstname</td>
+                            <td class="px-4 py-2">Lastname</td>
                             <td class="px-4 py-2">Action</td>
                             </thead>
                             <tbody>
-                            <tr v-for="post in posts.data" :key="post.id">
+                            <tr v-for="user in users.data" :key="user.id">
                                 <td class="px-4 py-2">
-                                    {{ post.id }}
+                                    {{ user.username }}
                                 </td>
                                 <td class="px-4 py-2">
-                                    {{ post.title }}
+                                    {{ user.firstname }}
                                 </td>
                                 <td class="px-4 py-2">
-                                    {{ post.body }}
+                                    {{ user.lastname }}
                                 </td>
                                 <td class="px-4 py-2">
-                                    <Link :href="route('post.index', { slug: post.slug})">Look More</Link>
+                                    <Link :href="route('user.index', { username: user.username})">Show More</Link>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
-                        <pagination class="mt-6" :links="posts.links" />
+                        <pagination class="mt-6" :links="users.links" />
                     </div>
                 </div>
             </div>

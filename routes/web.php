@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -31,4 +32,8 @@ Route::get('/dashboard', function () {
 
 Route::get('posts', [PostController::class,'index'])->name('posts.index');
 Route::get('posts/{post:slug}', [PostController::class,'show'])->name('post.index');
+
+Route::get('users', [UserController::class, 'index'])->name('users.index');
+Route::get('users/{username}', [UserController::class, 'show'])->name('user.index');
+
 require __DIR__.'/auth.php';
