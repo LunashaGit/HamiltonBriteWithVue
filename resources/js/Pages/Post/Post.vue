@@ -31,9 +31,9 @@ export default {
     props: {
         post: Object,
         comments: Object,
+        users: Object
     },
 };
-
 /*const x = axios.get('/api/user/' + 26 )
     .then(res => {
         console.log(res)
@@ -77,7 +77,7 @@ export default {
                                 </thead>
                                 <tbody>
                                 <tr v-for="comment in comments.data" :key="comment.id">
-                                    <td class="px-4 py-2">{{ comment.user_id }}</td>
+                                    <td v-for="user in users.data" :key="user.id" class="px-4 py-2"><p v-if="comment.user_id === user.id"> {{ user.username }} </p> </td>
                                     <td class="px-4 py-2">{{ comment.comment }}</td>
                                 </tr>
                                 </tbody>
