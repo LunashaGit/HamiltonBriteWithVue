@@ -8,5 +8,5 @@ export default {
 </script>
 
 <template>
-    <h2>{{ auth.user.username }}</h2>
+    <h2 class="font-heading font-bold">{{ auth.user.username }}</h2>
 </template>

@@ -44,12 +44,11 @@ export default {
         </template>
 
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-screen-sm lg:max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-gray-200 flex flex-col justify-center items-center">
-                        <img class="h-1/6 w-1/6 rounded-full" v-bind:src="('storage/images/' + auth.user.profile_picture)" />
+                    <div class="bg-white border-b border-gray-200 flex flex-col justify-center items-center">
                         <component v-bind:is="component" :auth=" auth " />
-                        <button v-on:click="toggle">Toggle</button>
+                        <button class="font-heading p-2 rounded-2xl shadow-blue-200 shadow-2xl" v-on:click="toggle">Edit Profile</button>
                     </div>
                 </div>
             </div>
