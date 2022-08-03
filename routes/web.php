@@ -35,7 +35,7 @@ Route::put('/dashboard/update/{id}', [UserController::class, 'update']);
 
 Route::get('posts', [PostController::class,'index'])->name('posts.index');
 Route::get('posts/{post:slug}', [PostController::class,'show'])->name('post.index');
-
+Route::post('posts/create', [PostController::class, 'store']);
 Route::get('users', [UserController::class, 'index'])->name('users.index');
 Route::get('users/{username}', [UserController::class, 'show'])->name('user.index');
 

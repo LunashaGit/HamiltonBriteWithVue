@@ -4,24 +4,6 @@ import { Head } from "@inertiajs/inertia-vue3";
 import Pagination from "@/Components/Pagination.vue";
 import { Link } from '@inertiajs/inertia-vue3';
 export default {
-    /*data(){
-        return{
-            title: '1'
-        }
-    },
-    mounted() {
-        console.log('Component mounted.')
-    },
-    methods:{
-        getData(){
-            axios.get('/api/user/' + {title:this.title} )
-                .then(res => {
-                    console.log(res)
-                }).catch(err => {
-                console.log(err)
-            })
-        }
-    },*/
     components: {
         Head,
         Pagination,
@@ -34,12 +16,6 @@ export default {
         users: Object
     },
 };
-/*const x = axios.get('/api/user/' + 26 )
-    .then(res => {
-        console.log(res)
-    }).catch(err => {
-        console.log(err)
-    })*/
 </script>
 
 

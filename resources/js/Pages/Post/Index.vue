@@ -2,8 +2,11 @@
 import BreezeAuthenticatedLayout from "@/Layouts/Authenticated.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import Pagination from "@/Components/Pagination.vue";
+import CreatePost from '@/Components/CreatePost.vue';
+
 export default {
     components: {
+        CreatePost,
         Head,
         Pagination,
         Link,
@@ -11,7 +14,19 @@ export default {
     },
     props: {
         posts: Object,
+        categories: Object,
     },
+    data(){
+        return {
+            login: false,
+            CreatePost
+        }
+    },
+    methods:{
+        toggle : function(){
+            this.login = this.login === false;
+        }
+    }
 };
 </script>
 
@@ -23,6 +38,9 @@ export default {
             <h2 class="text-xl font-semibold leading-tight text-gray-800">
                 Posts
             </h2>
+            <button @click="toggle">
+                Click
+            </button>
         </template>
 
         <div class="py-12">
@@ -45,6 +63,7 @@ export default {
                         </p>
                         <Link :href="route('post.index', { slug: post.slug})">Show More</Link>
                     </div>
+                        <component v-if="login" :categories="categories" v-bind:is="CreatePost" />
                     <pagination class="mt-6" :links="posts.links" />
                 </div>
             </div>
