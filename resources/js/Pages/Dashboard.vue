@@ -46,6 +46,7 @@ export default {
         <div class="py-12">
             <div class="max-w-screen-sm lg:max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <img class="h-32 lg:h-56 w-full" src="https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000">
                     <div class="bg-white border-b border-gray-200 flex flex-col justify-center items-center">
                         <component v-bind:is="component" :auth=" auth " />
                         <button class="font-heading p-2 rounded-2xl shadow-blue-200 shadow-2xl" v-on:click="toggle">Edit Profile</button>

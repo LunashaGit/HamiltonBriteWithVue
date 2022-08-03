@@ -7,7 +7,6 @@ export default {
 };
 </script>
 <template>
-    <img class="h-32 lg:h-56 w-full" src="https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000">
     <img class="h-1/6 w-1/6 rounded-3xl -mt-10 lg:-mt-16 shadow-2xl" v-bind:src="('storage/images/' + auth.user.profile_picture)" />
     <div class="flex flex-row gap-8 my-2.5">
         <div class="flex flex-col justify-center items-center">
