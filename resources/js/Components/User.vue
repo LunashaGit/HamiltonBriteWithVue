@@ -1,10 +1,9 @@
-<script>
+<script setup>
 
-export default {
-    props: {
-        'auth' : Object,
-    }
-};
+const props = defineProps({
+    auth : Object,
+})
+
 </script>
 <template>
     <img class="h-1/6 w-1/6 rounded-3xl -mt-10 lg:-mt-16 shadow-2xl" v-bind:src="('storage/images/' + auth.user.profile_picture)" />
