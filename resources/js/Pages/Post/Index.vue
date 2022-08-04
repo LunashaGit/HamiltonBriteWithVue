@@ -63,7 +63,21 @@ export default {
                         </p>
                         <Link :href="route('post.index', { slug: post.slug})">Show More</Link>
                     </div>
-                        <component v-if="login" :categories="categories" v-bind:is="CreatePost" />
+                    <transition
+                        enter-active-class="duration-300 ease-out"
+                        enter-from-class="transform opacity-0"
+                        enter-to-class="opacity-100"
+                        leave-active-class="duration-200 ease-in"
+                        leave-from-class="opacity-100"
+                        leave-to-class="transform opacity-0"
+                    >
+                        <div  v-if="login" class="w-full flex flex-col justify-center items-center z-50 absolute inset-0 bg-neutral-600/50">
+                            <button class="absolute top-10 right-10" @click="toggle">
+                                Click
+                            </button>
+                            <component :categories="categories" v-bind:is="CreatePost" />
+                        </div>
+                    </transition>
                     <pagination class="mt-6" :links="posts.links" />
                 </div>
             </div>
