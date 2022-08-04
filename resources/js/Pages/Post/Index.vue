@@ -39,7 +39,7 @@ export default {
                 Posts
             </h2>
             <button @click="toggle">
-                Click
+                Create
             </button>
         </template>
 
@@ -72,8 +72,8 @@ export default {
                         leave-to-class="transform opacity-0"
                     >
                         <div  v-if="login" class="w-full flex flex-col justify-center items-center z-50 absolute inset-0 bg-neutral-600/50">
-                            <button class="absolute top-10 right-10" @click="toggle">
-                                Click
+                            <button class="absolute top-10 right-10 p-2 bg-amber-50 rounded-full" @click="toggle">
+                                x
                             </button>
                             <component :categories="categories" v-bind:is="CreatePost" />
                         </div>

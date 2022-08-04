@@ -2,7 +2,6 @@
 import { useForm } from "@inertiajs/inertia-vue3";
 import {Inertia} from "@inertiajs/inertia";
 import { onMounted } from "vue";
-import axios from "axios";
 
 const props = defineProps({
     categories : Object,
@@ -49,7 +48,7 @@ function addCoord(){
 </script>
 
 <template>
-        <form @submit.prevent="form.post('/posts/create/')" enctype="multipart/form-data" class="flex flex-col py-4 px-6 bg-slate-50 overflow-hidden">
+        <form @submit.prevent="form.post('/posts/create/')" enctype="multipart/form-data" class="flex flex-col py-4 px-6 bg-slate-50 overflow-hidden rounded-xl">
             <div class="flex flex-row gap-8 justify-center items-center">
                 <div class="flex flex-col justify-center items-center">
                 <label for="title">
@@ -109,18 +108,8 @@ function addCoord(){
                 </div>
             </div>
             <div class="flex flex-row gap-8 justify-center items-center">
-                <div class="flex flex-col justify-center items-center">
-                <label for="latitude">
-                    Latitude
-                </label>
                 <input type="hidden" name="latitude" v-model="form.latitude" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
-                </div>
-                <div class="flex flex-col justify-center items-center">
-                <label for="longitude">
-                    Longitude
-                </label>
                 <input type="hidden" name="longitude" v-model="form.longitude" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
-                </div>
             </div>
             <div class="flex flex-col justify-center items-center mt-2.5 mb-5">
                 <label for="address">
@@ -128,14 +117,7 @@ function addCoord(){
                 </label>
                 <textarea @change="addCoord" name="address" v-model="form.address" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 resize-none" />
             </div>
-            <label
-                class="border-gray-300 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 dark:bg-gray-700 dark:border-gray-500 text-gray-400"
-                for="image">
-
-                <input @input="form.image = $event.target.files[0]" class="hidden" type="file" id="image"
-                       name="image" placeholder="">
-
-            </label>
+            <input @input="form.image = $event.target.files[0]" class="block mb-5 w-full text-xs text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file" id="image" name="image" />
             <input type="submit" class="w-1/4 mx-auto cursor-pointer shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
         </form>
 </template>
