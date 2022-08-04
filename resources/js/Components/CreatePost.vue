@@ -113,13 +113,13 @@ function addCoord(){
                 <label for="latitude">
                     Latitude
                 </label>
-                <input name="latitude" v-model="form.latitude" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
+                <input type="hidden" name="latitude" v-model="form.latitude" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
                 </div>
                 <div class="flex flex-col justify-center items-center">
                 <label for="longitude">
                     Longitude
                 </label>
-                <input name="longitude" v-model="form.longitude" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
+                <input type="hidden" name="longitude" v-model="form.longitude" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500">
                 </div>
             </div>
             <div class="flex flex-col justify-center items-center mt-2.5 mb-5">
